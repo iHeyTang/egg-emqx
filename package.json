@@ -1,6 +1,6 @@
 {
     "name": "egg-emqx",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "egg plugin for mqtt",
     "eggPlugin": {
         "name": "emqx"
