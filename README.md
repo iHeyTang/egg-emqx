@@ -1,4 +1,4 @@
-# egg-mqtt
+# egg-emqx
 
 mqtt client based on mqtt for egg framework
 
@@ -7,7 +7,7 @@ forked by [luofeng1/egg-emqtt](https://github.com/luofeng1/egg-emqtt)
 ## Install
 
 ```bash
-$ npm i egg-emqtt --save
+$ npm i egg-emqx --save
 ```
 
 ## Configuration
@@ -15,9 +15,9 @@ $ npm i egg-emqtt --save
 Change `${app_root}/config/plugin.js` to enable mqtt plugin:
 
 ```js
-exports.emqtt = {
+exports.emqx = {
   enable: true,
-  package: 'egg-emqtt',
+  package: 'egg-emqx',
 };
 ```
 
@@ -26,7 +26,7 @@ Configure mqtt information in `${app_root}/config/config.default.js`:
 **Single Client**
 
 ```javascript
-config.emqtt = {
+config.emqx = {
   client: {
     host: 'mqtt://xxx.xxx.xxx.xxx',
     password: 'xxxxx',
@@ -50,7 +50,7 @@ config.emqtt = {
 **Multi Clients**
 
 ```javascript
-config.emqtt = {
+config.emqx = {
   clients: {
     foo: {
       host: 'mqtt://xxx.xxx.xxx.xxx',
@@ -80,17 +80,17 @@ See [mqtt API Documentation](https://github.com/mqttjs/MQTT.js) for all availabl
 
 ## Usage
 
-In controller, you can use `app.emqtt` to get the mqtt instance, check [mqtt](https://github.com/mqttjs/MQTT.js) to see how to use.
+In controller, you can use `app.emqx` to get the mqtt instance, check [mqtt](https://github.com/mqttjs/MQTT.js) to see how to use.
 
 ```js
 // app/router.js
 
 module.exports = app => {
     const { router } = app;
-    router.get('/', app.emqtt.controller.home.index);
+    router.get('/', app.emqx.controller.home.index);
 
     // mqtt_client,subscribe topic: a
-    app.emqtt.route('a', app.mqtt.controller.home.index);
+    app.emqx.route('a', app.mqtt.controller.home.index);
 };
 
 // app/mqtt/controller/home.js
@@ -105,7 +105,7 @@ module.exports = app => {
        * }
        */ 
       // publish
-      await this.app.emqtt.publish('topic1', 'msg123456', { qos: 0 });
+      await this.app.emqx.publish('topic1', 'msg123456', { qos: 0 });
     }
   };
 };
@@ -129,7 +129,7 @@ module.exports = () => {
 
 ### Multi Clients
 
-If your Configure with multi clients, you can use `app.emqtt.get(instanceName)` to get the specific mqtt instance and use it like above.
+If your Configure with multi clients, you can use `app.emqx.get(instanceName)` to get the specific mqtt instance and use it like above.
 
 ## Questions & Suggestions
 

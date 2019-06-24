@@ -1,7 +1,7 @@
 'use strict';
 
-const emqtt = require('./lib/emqtt');
+const emqx = require('./lib/emqx');
 
 module.exports = app => {
-    if (app.config.emqtt) emqtt(app);
+    if (app.config.emqx) emqx(app);
 };

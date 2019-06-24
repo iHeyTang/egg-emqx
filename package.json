@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "egg plugin for mqtt",
     "eggPlugin": {
-        "name": "emqtt"
+        "name": "emqx"
     },
     "keywords": [
         "egg",
@@ -51,12 +51,12 @@
     ],
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/luofeng1/egg-emqtt.git"
+        "url": "git+https://github.com/iHeyTang/egg-emqx.git"
     },
     "bugs": {
         "url": "https://github.com/eggjs/egg/issues"
     },
-    "homepage": "https://github.com/luofeng1/egg-emqtt#readme",
-    "author": "luofeng1 <luofengsummer@gmail.com>",
+    "homepage": "https://github.com/iHeyTang/egg-emqx#readme",
+    "author": "iHeyTang <2602305910@qq.com>",
     "license": "MIT"
 }
