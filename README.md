@@ -2,6 +2,8 @@
 
 mqtt client based on mqtt for egg framework
 
+forked by [luofeng1/egg-emqtt](https://github.com/luofeng1/egg-emqtt)
+
 ## Install
 
 ```bash
@@ -112,6 +114,7 @@ module.exports = app => {
 module.exports = () => {
   return async (ctx, next) => {
     try {
+        ctx.logger.info(ctx.req.message);
         ctx.logger.info(ctx.req.msg);
         ctx.req.message = JSON.parse(ctx.req.msg);
     } catch (err) {
