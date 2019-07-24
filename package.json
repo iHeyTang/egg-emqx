@@ -47,7 +47,8 @@
         "app",
         "lib",
         "config",
-        "app.js"
+        "app.js",
+        "index.d.ts"
     ],
     "repository": {
         "type": "git",
