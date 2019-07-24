@@ -90,7 +90,7 @@ module.exports = app => {
     router.get('/', app.emqx.controller.home.index);
 
     // mqtt_client,subscribe topic: a
-    app.emqx.route('a', app.mqtt.controller.home.index);
+    app.emqx.route('a', app.mqtt.controller.home.index, app.mqtt.controller.home.index2);
 };
 
 // app/mqtt/controller/home.js
@@ -106,6 +106,10 @@ module.exports = app => {
        */ 
       // publish
       await this.app.emqx.publish('topic1', 'msg123456', { qos: 0 });
+    }
+
+    async index2() {
+      console.log('index2');
     }
   };
 };
