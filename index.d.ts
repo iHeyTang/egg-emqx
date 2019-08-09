@@ -12,20 +12,21 @@ declare module "egg" {
   }
 
   interface EMQXConfig {
+    name: string;
     host: string;
     password: string;
     username: string;
     clientId: string;
-    options: {
-      keepalive: number = 60;
-      protocolId: "MQTT" = "MQTT";
-      protocolVersion: 4 = 4;
-      clean: boolean = true;
-      reconnectPeriod: number = 1000;
-      connectTimeout: number = 30 * 1000;
-      rejectUnauthorized: boolean = false;
+    options?: {
+      keepalive?: number = 60;
+      protocolId?: "MQTT" = "MQTT";
+      protocolVersion?: 4 = 4;
+      clean?: boolean = true;
+      reconnectPeriod?: number = 1000;
+      connectTimeout?: number = 30 * 1000;
+      rejectUnauthorized?: boolean = false;
     };
-    msgMiddleware: string[];
+    msgMiddleware?: string[];
   }
 
   // TODO
