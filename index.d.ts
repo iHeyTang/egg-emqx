@@ -1,9 +1,13 @@
 import { MqttClient } from "mqtt";
-import { Controller, Router, IMiddleware } from "egg";
+import { Controller, IMiddleware } from "egg";
+import Router from "koa-router";
 
 declare module "egg" {
   class EMQXClient extends MqttClient {
-    route: (topic: string, ...middleware: IMiddleware[]) => Router;
+    route<StateT = any, CustomT = {}>(
+      path: string,
+      ...middleware: Array<Router.IMiddleware<StateT, CustomT>>
+    ): Router<StateT, CustomT>;
   }
 
   interface EMQXSingleton {
