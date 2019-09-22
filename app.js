@@ -1,9 +1,9 @@
 'use strict';
 
 const loader = require('./lib/loader');
-const emqxClient = require('./lib/emqxClient');
+const emqxWorker = require('./lib/emqxWorker');
 
 module.exports = app => {
   if (app.config.emqx) loader(app);
-  if (app.config.emqx) emqxClient(app);
+  if (app.config.emqx) emqxWorker(app);
 };

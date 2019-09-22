@@ -1,6 +1,6 @@
 'use strict';
 
-const emqx = require('./lib/emqx');
+const emqx = require('./lib/emqxAgent');
 
 module.exports = agent => {
   if (agent.config.emqx) emqx(agent);
